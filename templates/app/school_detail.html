@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1 style="color: rgb(233,20,197);">Details information school</h1>
+    
+            <h1>Details of School {{DOSI.scname}}</h1>
+            <h1>Name  of principal {{DOSI.scprincipal}}</h1>
+            <h1>Location of the School{{DOSI.sclocation}}</h1>
+
+            {% for sto in DOSI.allSO.all %}
+                <h1>Name of the student is {{sto.sname}}</h1>
+                <h1>age of the student is {{sto.sage}}</h1>
+            {% endfor %}
+        
+            <h1><a href="{% url 'update' pk=DOSI.pk %}">update</a></h1>
+
+            <h1><a href="{% url 'delete' pk=DOSI.pk %}">Delete</a></h1>
+    </center>
+</body>
+</html>
